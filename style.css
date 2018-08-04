@@ -1,0 +1,186 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+    padding-top: 20px;
+}
+
+
+.background {
+  background-color: lightblue;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_h1 {
+    font-family: 'Open Sans', cursive;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    color: navy;
+    font-size: 32px;
+    flex-wrap: wrap;
+}
+div{
+   font-family: 'Open Sans', sans-serif;
+   line-height: 1.5
+}
+span {
+   font-family: 'Open Sans', sans-serif;
+   line-height: 1.5
+}
+
+/**********CARD STYLES*******************/
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transform: rotateY(0deg);
+    transition: transform .25s linear 0s;
+}
+
+/*
+transitions on 
+
+https://stackoverflow.com/questions/9751322/rotating-tiles-how-to-delay-a-transition-after-hover
+
+and 
+
+https://3dtransforms.desandro.com/card-flip
+
+*/
+
+
+
+/* looking to change color on mouse over found info on "hover" on 
+
+https://www.w3schools.com/cssref/sel_hover.asp 
+*/
+
+.deck .card:hover {
+    background-color: #EEE;
+    cursor: pointer;
+
+}
+.deck .card.open {
+    font-size: 33px;
+    transform: rotateZ(180deg);
+    background: #02b3e4;
+    display: flex;
+    align-items: center;
+    transition: transform .25s;
+}
+.deck .card.show {
+    font-size: 33px;
+
+}
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+    transform: rotateX(90deg);
+    transition: transform .12s linear 0s;
+}
+
+/*
+ * Styles for the Score Panel on the mainpage
+ */
+.score-panel {
+    background-color: lightblue;
+    text-align: center;
+    font-family: 'Open Sans', cursive;
+    width: 600px;
+    margin-bottom: 12px;
+    font-size: 30px;
+}
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    color: gold;
+
+}
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    font-size: .8em;
+}
+
+
+/*
+ * Styles for the end screen, contains final scores and time
+ */
+.end_screen {
+    display: none;
+    top : 5px;
+    right : 5px;
+    bottom : 5px;
+    left : 5px;
+    position: fixed;
+
+}
+.end_screen_content {
+    max-width: 360px;
+    padding : 40px;
+    margin: 5em auto;
+    border-radius: 10px;
+    background-color: white;
+    border-color: grey;
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px grey
+}
+.end_screen_title {
+    text-align: center;
+    margin: 0;
+    font-weight: 400;
+}
+.end_screen_stars .stars li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-flex;
+    color: gold;
+    font-size: 20px;
+}
+.end_screen_message_replay {
+    text-align: center;
+    cursor: pointer;
+}
+
